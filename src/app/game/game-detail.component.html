@@ -1,0 +1,23 @@
+<div class="container jogo-detalhe">
+    <a [routerLink]="['']" class="btn btn-primary hidden-desktop">Voltar</a>
+    <div class="row">
+      <div class="offset-sm-2 col-12 col-sm-4 text-center">
+        <img src="{{detail?.image}}" class="img-thumbnail" />
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="game-info">
+          <h1>{{detail?.name}}</h1>
+          <p>
+            <span>{{detail?.viewers}}</span> visualizações
+          </p>
+          <p>
+            <span>{{detail?.channels}}</span> canais ao vivo
+          </p>
+          <p>
+            <span>{{detail?.popularity}}</span> popularidade
+          </p>
+          <a [routerLink]="['']" class="btn btn-primary">Voltar</a>
+        </div>
+      </div>
+    </div>
+</div>

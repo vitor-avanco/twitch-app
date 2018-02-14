@@ -1,0 +1,174 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,600');
+$roxo: #4b367c;
+body{
+    background-color: #faf9fa;
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    background-color: $roxo;
+    padding: 10px;
+    .tw-svg__asset {
+        fill: #FFFFFF;
+    }
+}
+.filtro-busca{
+    border: 1px solid #dad8de;
+    background: #FFFFFF;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 10px;
+    font-size: 13px;
+    color: #000;
+    label{
+        display: block;
+        width: 100%;
+    }
+    li{
+        padding: 5px 10px;
+        background: #ddd;
+        border-radius: 5px;
+        list-style: none;
+        display: inline-block;
+        width: 49%;
+        text-align: center;
+        font-weight: 500;
+        cursor: pointer;
+        padding: 0px;
+        line-height: 38px;
+        &.active, &:hover{
+            background: $roxo;
+            color: #FFFFFF;
+        }
+    }
+}
+.search-results{
+    > div{
+        margin-bottom: 10px;
+        a{
+            display: block;
+            position: relative;
+        }
+        h2{
+            font-size: 14px;
+            color: #000000;
+            margin-top: 5px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            text-transform: capitalize;
+        }
+        p{
+            font-size: 12px;
+            color: #333;
+        }
+    }
+}
+
+.jogo-detalhe{
+    margin-top: 30px;
+    .game-info{
+        h1{
+            font-size: 28px;
+            line-height: 34px;
+            font-weight: 600;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+        p{
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+    }
+    .btn-primary{
+        background: transparent;
+        border-color: $roxo;
+        color: $roxo;
+        padding: 5px 20px;
+        font-size: 13px;
+        margin-top: 20px;
+    }
+    .hidden-desktop{
+        display: none;
+    }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 667px) {
+    .search-results > div a .info{
+        position: absolute;
+        bottom: 0;
+        background: rgba(0,0,0,0.9);
+        background-size: auto 100%;
+        overflow: hidden;
+        color: #FFF;
+        padding: 5px;
+        left: 0px;
+        width: 100%;
+        h2{
+            color: #FFFFFF;
+            
+        }
+        p{
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: #FFFFFF;
+        }
+    }
+    .search-results > div {
+        margin-bottom: 3px;
+        padding: 0 1px;
+    }
+    .filtro-busca{
+        margin-bottom: 10px;
+    }
+    .filtro-busca label{
+        font-size: 14px;
+    }
+    .form-control{
+        margin-bottom: 15px;
+    }
+    .jogo-detalhe {
+        position: relative;
+        margin-top: 0px;
+        .col-12{
+            padding: 0px;
+            img.img-thumbnail{
+                width: 100%;
+                padding: 0px;
+                border: 0px;
+            }
+        }
+        .hidden-desktop{
+            display: block;
+            position: absolute;
+            top: -45px;
+            margin: 0px;
+            z-index: 99999999999;
+            color: #FFF;
+            border-color: #FFF;
+        }
+        .game-info{
+            position: absolute;
+            bottom: 0px;
+            padding: 10px;
+            background: rgba(0,0,0,0.9);
+            width: 100%;
+            text-align: center;
+
+            h1{
+                color: #FFF;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            p{
+                color: #FFFFFF;
+            }
+            .btn-primary{
+                color: #FFF;
+                border-color: #FFFFFF;
+            }
+        }
+    }
+}   

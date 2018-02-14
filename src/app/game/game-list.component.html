@@ -1,0 +1,36 @@
+<h1 *ngIf="!game">Carregando...</h1>
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="filtro-busca">
+          <div class="row">
+            <div class="col-sm-6">
+            <label>Buscar pelo nome:</label>
+              <input #busca (keyup)="0" type="text" class="form-control" placeholder="Digite aqui sua busca" /> 
+            </div>
+            <div class="col-sm-6">
+              <label>Ordenar por:</label>
+              
+              <li [class.active]="order === 'popularity'"  (click)="setOrder('popularity')">Popularidade</li>
+              <li [class.active]="order === 'viewers'" (click)="setOrder('viewers')" >Viewers</li>
+  
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="row search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="1000" (scrolled)="onScroll()">
+            <div *ngFor="let item of game | filtroPorTitulo: busca.value | orderBy: order:true:'case-insensitive'" class="col-6 col-sm-4 col-md-3" >
+                <a [routerLink]="['/details', item.id]">
+                    <img src="{{item.image}}" class="img-fluid">
+                    <div class="info">
+                        <h2>{{item.name}}</h2>
+                        <p>
+                            {{item.viewers}} estão assistindo
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+  </div>
